@@ -14,10 +14,13 @@ def string_info(a):
 
 def is_contains(b, c):
     count_cals()
-    if b.upper() in str(c).upper():
-        bool_ = True
-    else:
-        bool_ = False
+    BIG_ = [s.upper() for s in c]
+    for i in BIG_:
+        if i == b.upper():
+            bool_ = True
+            break
+        else:
+            bool_ = False
     return bool_
 
 
