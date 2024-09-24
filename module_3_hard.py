@@ -4,7 +4,7 @@ def counter(*objects):
         if isinstance(i, list):
             sum_ = sum_ + (counter(i))
         elif isinstance(i, dict):
-            sum_ = sum_ + counter(i.items())
+            sum_ = sum_ + counter(list(i.items()))
         elif isinstance(i, tuple):
             sum_ = sum_ + counter(list(i))
         elif isinstance(i, set):
