@@ -1,14 +1,12 @@
+#________Функция подсчета суммы целых чисел и символов в сложном списке через рекурсию______
+
 def counter(*objects):
     sum_ = 0
     for i in list(*objects):
-        if isinstance(i, list):
+        if isinstance(i, list) or isinstance(i, tuple) or isinstance(i, set):
             sum_ = sum_ + (counter(i))
         elif isinstance(i, dict):
             sum_ = sum_ + counter(list(i.items()))
-        elif isinstance(i, tuple):
-            sum_ = sum_ + counter(list(i))
-        elif isinstance(i, set):
-            sum_ = sum_ + counter(list(i))
         else:
             if isinstance(i, int):
                 sum_ += i
